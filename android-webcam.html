@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108869266-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-108869266-1');
+		</script>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<title>Делаем вебкамеру из мобильного телефона (android)</title>
+		<style type="text/css">
+			@page { margin: 0.79in }
+			p { margin-bottom: 0.1in; line-height: 120% }
+			pre.cjk { font-family: "NSimSun", monospace }
+		</style>
+	</head>
+<body lang="ru-RU" dir="ltr">
+	<pre class="western" style="text-align: left"><font color="#0066b3"><font size="4" style="font-size: 16pt"><b>Делаем вебкамеру из мобильного телефона (android)</b></font></font><br/>
+<font size="3" style="font-size: 12pt">Долгое время я использовал</font><font size="3" style="font-size: 12pt"> <span lang="en-US"><a href="https://www.dev47apps.com/droidcam">Droidcam</a>.</span></font>
+
+<font size="3" style="font-size: 12pt">Но в один прекрасный день оно меня окончательно заебало тем, что нормально работает только в разрешалове 640x480,</font>
+<font size="3" style="font-size: 12pt">а в 720p начинает тормозить картинка, да еще и хуеву тучу операций нужно сделать чтобы оно просто нормально заработало, 
+и я решил поискать что-то что даст хотя-бы 720p.</font>
+
+<font size="3" style="font-size: 12pt">Нашел вот такое решение.<br/>
+За основу взята вот <a href="https://obsproject.com/forum/resources/android-webcam-guide-for-obs.56/">эта статья</a>.</font>
+
+<font size="3" style="font-size: 12pt">Сначала несколько моментов которые выплыли за несколько первых дней использования.
+<br/>Телефон подключаем не через wifi, а через usb шнурок.</font>
+
+<font size="3" style="font-size: 12pt"><span lang="en-US">Во-первых через wifi у меня были ужасные лаги, а то и пропадала связь вовсе. Не так много оно жрет канала, но видать<br/>роутер просто через некоторое время начинал подахуевать.<br/>И во-вторых сама апликуха жрет дохрена батареи, а вместе со штатной подсветкой (она же вспышка, какой никакой, а дополнительный свет)<br/>так и вообще заряд уходит в минус даже если телефон заряжается все время по USB.</span></font>
+
+<font size="3" style="font-size: 12pt">Качаем эту <a href="https://play.google.com/store/apps/details?id=com.pas.webcam">апликуху</a>.</font>
+        
+<font size="3" style="font-size: 12pt">Первым делом делаем доступной нашу камеру по IP.</font>
+
+<font size="3" style="font-size: 12pt">У меня вот так:</font>
+
+<img src="android-webcam_html_d64425c9268bba78.gif" align="left" width="303" height="308">
+<br clear="left"/>
+</img>
+<font size="3" style="font-size: 12pt">Дальше идем в настройки приложения.</font>
+
+<img src="android-webcam_html_2f988da72f23dabf.gif" align="left" width="320" height="406">
+<br clear="left"/>
+</img>
+
+<font size="3" style="font-size: 12pt">Здесь выставляем наше желаемое разрешалово, в данном случае 720p (широкоформатное) и качество.
+Иногда ставлю также не широкоформатное, так как когда сычую за пекарней я хуево помещаюсь в кадр. 
+Начинай от 50 и дальше, пока не начнет подтормаживать видео. У меня на 90+ уже начинает тормозить. 
+Та что ставлю примерно 70-80. Чекаем все это пока просто в веб интерфейсе.</font>
+   
+<font size="3" style="font-size: 12pt">Выставить разрешалово и качество, а также включить вспышку
+можно будет в принципе и потом в том же веб интерфейсе.</font>
+
+<font size="3" style="font-size: 12pt">Айпишник и порт к веб интерфейсу увидишь когда запустишь камеру
+(у меня это было что-то в духе 192.168.42.129:8080)
+Остальные настройки я особо и не смотрел. Думаю можно еще поиграться с теми что отключают экран или вообще сворачивают приложение,
+может будет не так люто садить батарею.</font>
+
+<font size="3" style="font-size: 12pt">Дальше качаешь <a href="http://alax.info/blog/1216">эту приблуду</a>.</font>
+
+<img src="android-webcam_html_48dcc6dc310eecba.jpg" align="left" width="548" height="422">
+<br clear="left"/>
+</img>
+<font size="3" style="font-size: 12pt">Вбиваем урл такого вида (c /video в конце) и выставляем наше разрешалово.</font>
+
+<font size="3" style="font-size: 12pt">Потом просто добавляем как камеру в OBS</span></font>
+
+<img src="android-webcam_html_d3ef6859c4e8125f.jpg" align="left" width="642" height="212">
+<br clear="left"/>
+</img>
+
+<font size="3" style="font-size: 12pt">Фпс может быть и больше, но у меня ipcam выдает максимум 30.</font>
+
+<font size="3" style="font-size: 12pt">Из косяков единственное что было замечено это то,
+что иногда все настроено правильно, а картинка в OBS не появляется или просто висит.
+Помогало просто по новой добавить камеру в OBS.</font>
+    </body>
+</html>
